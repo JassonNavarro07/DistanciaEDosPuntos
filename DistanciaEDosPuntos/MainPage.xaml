@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DistanciaEDosPuntos.MainPage"
+             xmlns:ViewModel="clr-namespace:DistanciaEDosPuntos.ViewModel">
+
+    <ContentPage.BindingContext>
+        <ViewModel:DistanciaViewModel/>
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Label Text="Point 1" FontSize="24" />
+            <Entry Placeholder="X" Text="{Binding Point1X}" Keyboard="Numeric" />
+            <Entry Placeholder="Y" Text="{Binding Point2X}" Keyboard="Numeric" />
+
+            <Label Text="Point 2" FontSize="24" />
+            <Entry Placeholder="X" Text="{Binding Point1Y}" Keyboard="Numeric" />
+            <Entry Placeholder="Y" Text="{Binding Point2Y}" Keyboard="Numeric" />
+
+            <Button
+                   x:Name="CounterBtn"
+                   Text="Calcular" 
+                   Command="{Binding CalculateDistanceeeCommand}"
+                   SemanticProperties.Hint="Counts the number of times you click"
+                   HorizontalOptions="Fill" />
+
+            <Label Text="Distance" FontSize="24" />
+            <Label Text="{Binding Resultado}" FontSize="24" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
